@@ -1,0 +1,132 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:App1.ViewModel"
+    xmlns:Models="using:App1.Models"
+    x:Class="App1.Controls.ChromaticWheel"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+
+
+
+    <UserControl.DataContext>
+        <ViewModel:ChromaticNotesViewModel/>
+    </UserControl.DataContext>
+
+
+
+    <Grid Margin="0,0,-110,-185">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="cBox" ItemsSource="{Binding OneOctave}" Grid.Row="0"
+			HorizontalAlignment="Right" SelectionChanged="cBox_SelectionChanged"/>
+        <Grid  Grid.Row="1">
+            <Grid.DataContext>
+                <Models:ChromaticNotes/>
+            </Grid.DataContext>
+            <!--NOTES-->
+            <StackPanel x:Name="I" Style="{StaticResource sPanel1}" >
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="{Binding INote, Mode=TwoWay}" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="ii" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="30"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="2" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="II" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="60"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="3" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="iii"  Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="90"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="4" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="III" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="120"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="5" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="IV" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="150"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="6" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="X" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="180"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="7" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="V" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="210"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="8" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="vi" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="240"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="9" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="VI" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="270"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="10" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="vii" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="300"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="11" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="VII" Style="{StaticResource sPanel1}" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <CompositeTransform CenterX="0.5" CenterY="100" Rotation="330"/>
+                </StackPanel.RenderTransform>
+                <ToggleButton Style="{StaticResource tButton}">
+                    <TextBlock Text="12" Style="{StaticResource textBlockStyle}"/>
+                </ToggleButton>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+
+
+</UserControl>

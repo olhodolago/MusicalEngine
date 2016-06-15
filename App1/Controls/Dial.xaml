@@ -1,0 +1,22 @@
+﻿<UserControl
+    x:Class="App1.Controls.Dial"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="450"
+    Width="450" >
+
+    <Grid>
+        <Ellipse Fill="Blue" Margin="30"/>
+        <Grid>
+            <Grid.RenderTransform>
+                <RotateTransform CenterX="225" CenterY="225" Angle="{Binding Angle}"></RotateTransform>
+            </Grid.RenderTransform>
+            <Ellipse Fill="Beige" Height="100" Width="100" VerticalAlignment="Top"
+                     Margin="50"/>
+        </Grid>
+    </Grid>
+</UserControl>
